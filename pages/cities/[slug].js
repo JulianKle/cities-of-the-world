@@ -15,16 +15,22 @@ export default function DetailSite() {
 
   useEffect(() => {
     async function startFetching() {
+      if (!slug) {
+        return null;
+      }
       const response = await fetch(
         `https://api.teleport.org/api/urban_areas/slug:${slug}/images/`
       );
       const pictureObject = await response.json();
-      console.log(pictureObject.photos[0]?.image);
       setPicture(pictureObject.photos[0]?.image?.web);
     }
 
     startFetching();
   }, [slug]);
+
+  if (!city) {
+    return null;
+  }
 
   return (
     <>
