@@ -19,7 +19,7 @@ export default function DetailSite() {
         `https://api.teleport.org/api/urban_areas/slug:${slug}/images/`
       );
       const pictureObject = await response.json();
-      console.log(pictureObject.photos[0]?.image?.web);
+      console.log(pictureObject.photos[0]?.image);
       setPicture(pictureObject.photos[0]?.image?.web);
     }
 
@@ -38,8 +38,9 @@ export default function DetailSite() {
 
       <Image
         src={picture}
-        height={600}
-        width={600}
+        height={200}
+        width={1200}
+        quality={100}
         alt="A picture of a small dog"
       ></Image>
 
