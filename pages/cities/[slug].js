@@ -24,7 +24,7 @@ export default function DetailSite() {
     }
 
     startFetching();
-  }, []);
+  }, [slug]);
 
   return (
     <>
