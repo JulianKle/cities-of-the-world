@@ -41,7 +41,7 @@ export default function DetailSite() {
         height={200}
         width={1200}
         quality={100}
-        alt="A picture of a small dog"
+        alt={`A picture of a ${city.name}`}
       ></Image>
 
       <nav>
